@@ -8,8 +8,7 @@ output: {
 }
 ```
 
-Rob’s post uses webpack-dev-server as an HTTP server, but we want to user our own custom express server. Here’s how you do it.
-Install express
+Rob’s post uses webpack-dev-server as an HTTP server, but we want to user our own custom express server. First step: install express
 ```
 npm install --save express
 ```
@@ -26,7 +25,7 @@ app.listen(3030, () => console.log('Listening on port 3030!'))
 
 Start webpack in watch mode
 ```
-node_modules/.bin/webpack --watch
+./node_modules/.bin/webpack --watch
 ```
 
 Run your server
@@ -52,8 +51,21 @@ app.listen(3030, () => console.log('Listening on port 3030!'))
 
 Start the reload command
 
-```./node_modules/.bin/reload server.js```
+```
+./node_modules/.bin/reload server.js
+```
+
+We've been running webpack and reload directly from the terminal. However, it's convenient to put it in package.json
+
+```javascript
+"scripts": {
+    "watch": "webpack --watch",
+    "reload": "reload server.js"
+  }, 
+```
 
 This is great for development, but what if you want to reload automatically on your server? Just use nodemon instead of reload 
 
+```
 nodemon server.js
+```
