@@ -5,11 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot",
-    "build": "webpack",
-    "wut": "cwd"
-
-    
+    "watch": "webpack --watch",
+    "reload": "reload server.js"
   },
   "author": "",
   "license": "ISC",
