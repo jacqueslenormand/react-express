@@ -1,4 +1,4 @@
-First, set up your react application using Rob Hitt's article
+First, set up your react application using  [Rob Hitt's article](https://medium.com/@robhitt/react-from-scratch-575d1e570b85)
 
 Rob’s webpack config file didn’t work on my Windows machine and here’s the fix:
 ```javascript 
