@@ -18246,6 +18246,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // App.js
 
 
+var _version = undefined;
+setInterval(function () {
+   fetch('/version').then(function (d) {
+      return d.json();
+   }).then(function (x) {
+      if (!_version) _version = x;else if (_version != x) window.location.reload();
+   });
+}, 200);
+
 var App = function (_React$Component) {
    _inherits(App, _React$Component);
 
@@ -18261,7 +18270,7 @@ var App = function (_React$Component) {
          return _react2.default.createElement(
             'div',
             null,
-            'Hey React Do! BOOMBOOMBAMBOOMBINGONGDAAAAMN'
+            '!! WHAT !!!'
          );
       }
    }]);

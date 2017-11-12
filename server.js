@@ -1,11 +1,25 @@
 const express = require('express')
 const app = express()
-var reload = require('reload')
-reload(app);
+var http = require('http')
 
 
-app.get('/', (req, res) => res.sendfile('index.html'))
-app.get('/bundle.js', (req, res) => res.sendfile('bundle.js'))
+app.get('/bundle.js', (req, res) => res.sendFile(__dirname + '/bundle.js'))
+
+app.get('/foobar', (req, res) => res.send("HEY"))
+
+let version = '' + Math.random()
+app.get('/version', (req, res) => res.send(version))
+
+app.get('*', (req, res) => res.sendFile(__dirname + '/index.html'))
 
 
-app.listen(3030, () => console.log('Example app listening on port 3030!'))
+
+app.set('port', process.env.PORT || 9020)
+
+var server = http.createServer(app)
+
+
+app.listen(app.get('port'), function () {
+    console.log('Web server listening on port ' + app.get('port'))
+  })
+

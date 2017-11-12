@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack --watch",
-    "reload": "reload server.js"
+    "server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,8 @@
     "react-dom": "^16.1.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
+  },
+  "devDependencies": {
+    "browser-sync-webpack-plugin": "^1.2.0"
   }
 }
